@@ -1,0 +1,82 @@
+name: poll
+
+on:
+  schedule:
+    - cron: "0 * * * *" # hourly; gentle on the sources, best-effort (GitHub delays scheduled runs under load)
+  workflow_dispatch: {} # manual run also forces a (re)deploy
+
+# Serialize runs so they don't race on the committed data/ ledger.
+concurrency:
+  group: resetradar-poll
+  cancel-in-progress: false
+
+permissions:
+  contents: write # commit the updated ledger
+  pages: write # deploy the dashboard
+  id-token: write # required by deploy-pages
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.ledger.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v8.2.0 # no floating major tag published
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Run poller
+        env: # optional Telegram broadcast; the poller no-ops if unset
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: uv run resetradar poll
+
+      - name: Commit ledger & decide whether to deploy
+        id: ledger
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Gate on events.json only - latest.json/feed.xml change every run just from
+          # the timestamp, which would bloat history and defeat the deploy gate.
+          if [ -z "$(git status --porcelain data/events.json)" ]; then
+            echo "no new/changed events; skipping ledger commit"
+            # Keep the regenerated latest.json/feeds (fresh timestamps + URLs) for
+            # the Pages assemble step; just don't commit them to the ledger.
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git add data/
+            git commit -m "data: update reset ledger [skip ci]"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Assemble Pages site
+        if: steps.ledger.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          mkdir -p _site
+          cp -r site/. _site/   # index.html + assets/ (logos, favicon)
+          cp data/latest.json data/events.json data/feed.xml data/feed-claude.xml data/feed-codex.xml _site/ 2>/dev/null || true
+
+      - name: Upload Pages artifact
+        if: steps.ledger.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: poll
+    if: needs.poll.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

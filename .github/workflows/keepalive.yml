@@ -1,0 +1,34 @@
+name: keepalive
+
+# GitHub auto-disables scheduled workflows after 60 days of repository
+# INACTIVITY, and commits made by the poll workflow do NOT reset that timer.
+# Without this, the poller silently stops and the RSS feed goes stale with no
+# error. This pushes an empty commit when the repo is approaching the threshold,
+# keeping the cron alive. (A human push or PR merge also resets it.)
+
+on:
+  schedule:
+    - cron: "0 12 * * 0" # weekly, Sunday 12:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Push keepalive commit if approaching 60-day limit
+        run: |
+          last=$(git log -1 --format=%ct)
+          days=$(( ( $(date +%s) - last ) / 86400 ))
+          echo "days since last commit: $days"
+          if [ "$days" -ge 50 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "chore: keepalive [skip ci]"
+            git push
+          else
+            echo "repo recently active; no keepalive needed"
+          fi

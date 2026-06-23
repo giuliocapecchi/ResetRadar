@@ -1,0 +1,67 @@
+# ResetRadar configuration - watched accounts and X mirrors.
+# Editing this file is the supported way to add/remove watched sources.
+
+[accounts]
+# Official X handles -> platform. Only these accounts mint events.
+claudedevs   = "claude"   # @ClaudeDevs  - posted the cited "reset everyone's limits"
+anthropicai  = "claude"   # @AnthropicAI
+claudeai     = "claude"   # @ClaudeAI
+openaidevs   = "codex"    # @OpenAIDevs
+openai       = "codex"    # @OpenAI
+sama         = "codex"    # @sama (Sam Altman)
+gdb          = "codex"    # @gdb (Greg Brockman)
+thsottiaux   = "codex"    # @thsottiaux (Thibault Sottiaux, Codex)
+embirico     = "codex"    # @embirico (Codex, OpenAI)
+bcherny      = "claude"   # @bcherny (Boris Cherny, Claude Code)
+trq212       = "claude"   # @trq212 (Thariq, Anthropic)
+_catwu       = "claude"   # @_catwu (Cat Wu, Anthropic)
+
+[nitter]
+# Primary X reader: free, no auth. Mirrors each official account's timeline as
+# RSS, which gives us discovery of new posts. Instances are flaky, so list a few
+# - the adapter uses the first that returns items.
+enabled = true
+instances = [
+    "nitter.net",
+    "xcancel.com",
+    "nitter.tiekoetter.com",
+    "nitter.poast.org",
+]
+
+[backfill]
+# Verified historical reset tweets, read once via fxtwitter (free, no auth) to
+# give the ledger real dated history before the live poller accumulates its own.
+# Real, linkable events - extend as you find older ones.
+tweets = [
+    # Claude - newest -> oldest
+    "https://x.com/ClaudeDevs/status/2068122937308426676",  # Jun 20 reset all
+    "https://x.com/ClaudeDevs/status/2067802163498352929",  # Jun 19 bugfix reset
+    "https://x.com/ClaudeDevs/status/2065621176735646006",  # Jun 13 reset all
+    "https://x.com/ClaudeDevs/status/2061501787769893055",  # Jun 1 reset Pro/Max
+    "https://x.com/ClaudeDevs/status/2060043211129909732",  # May 28 limit increase
+    "https://x.com/ClaudeDevs/status/2055347539923308703",  # May 15 reset all
+    "https://x.com/ClaudeDevs/status/2054639777685934564",  # May 13 weekly +50%
+    "https://x.com/ClaudeDevs/status/2052064938840228237",  # May 6 doubled 5h limits
+    "https://x.com/ClaudeDevs/status/2047371123185287223",  # Apr 23 reset all subs
+    "https://x.com/claudeai/status/2032911276226257206",    # Mar 14 2x off-peak
+    "https://x.com/trq212/status/2027232172810416493",      # Feb 27 reset all
+    "https://x.com/_catwu/status/2020221012605038985",      # Feb 7 $50 credit grant
+    "https://x.com/claudeai/status/2003918730833608902",    # Dec 24 2x holiday
+    # Codex - newest -> oldest
+    "https://x.com/thsottiaux/status/2067399435009622521",  # Jun 18 double reset
+    "https://x.com/OpenAI/status/2065225362544726371",      # Jun 12 reset banking
+    "https://x.com/thsottiaux/status/2062329981548802523",  # Jun 4 reset all paid
+    "https://x.com/thsottiaux/status/2061106703446450392",  # May 31 reset all paid
+    "https://x.com/thsottiaux/status/2058280452851638313",  # May 23 reset all
+    "https://x.com/thsottiaux/status/2055707616605835333",  # May 16 reset all paid
+    "https://x.com/thsottiaux/status/2048997818673537399",  # Apr 28 reset all paid
+    "https://x.com/sama/status/2046604989527912590",        # Apr 21 reset (4M users)
+    "https://x.com/thsottiaux/status/2044943514832871564",  # Apr 17 reset (anniversary)
+    "https://x.com/OpenAI/status/2042296046009626989",      # Apr 9 reset Pro + promo
+    "https://x.com/thsottiaux/status/2041655710346572085",  # Apr 7 reset (3M users)
+    "https://x.com/thsottiaux/status/2037346989244096581",  # Mar 27 reset all
+    "https://x.com/thsottiaux/status/2031605592352313567",  # Mar 11 reset (outage)
+    "https://x.com/thsottiaux/status/2004100061933064395",  # Dec 25 reset + 2x holiday
+    "https://x.com/embirico/status/2002110337563361492",    # Dec 19 reset (recount)
+    "https://x.com/thsottiaux/status/1995988609896513743",  # Dec 2 reset all
+]

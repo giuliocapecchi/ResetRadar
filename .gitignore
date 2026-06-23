@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Tooling / local session state (not part of the project)
+.pytest_cache/
+.playwright-mcp/
+.claude/
+.remember/
+.env
+
+# NOTE: data/ is intentionally NOT ignored — events.json is the committed
+# idempotency ledger that persists detection state between CI runs.
+
+# scratch / artifact previews
+.scratch/

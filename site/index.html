@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ResetRadar · Claude Code &amp; Codex usage-limit reset tracker</title>
+<meta name="description" content="Track global Claude Code and Codex usage-limit resets. Subscribe on Telegram or RSS and never miss a free one." />
+<link rel="alternate" type="application/rss+xml" title="ResetRadar · AI usage-limit resets" href="./feed.xml" />
+<link rel="icon" type="image/svg+xml" href="./assets/radar.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* "premium" direction: terracotta-led chrome, Claude = terracotta #d97757,
+     Codex = blue #3941ff. Dark is the default; light is the chosen palette. */
+  :root[data-theme="light"] {
+    --bg:#f7f4f1; --card:#ffffff; --ink:#1f2937; --muted:#8b8b8b; --dim:#a8a29b;
+    --line:#e7e1da; --line-2:#f1ece6;
+    --accent:#d97757; --on-accent:#ffffff;
+    --claude:#d97757; --codex:#3941ff; --grid:rgba(31,41,55,.03); --grid-2:rgba(31,41,55,.055);
+  }
+  :root[data-theme="dark"] {
+    --bg:#16110d; --card:#211a14; --ink:#efe7df; --muted:#a39a90; --dim:#6b6258;
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.05);
+    --accent:#d97757; --on-accent:#1a0f07;
+    --claude:#e0855c; --codex:#7a86ff; --grid:rgba(255,255,255,.028); --grid-2:rgba(255,255,255,.05);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0; background-color:var(--bg); color:var(--ink);
+    font-family:"Public Sans",system-ui,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased;
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+      linear-gradient(var(--grid-2) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid-2) 1px,transparent 1px);
+    background-size:28px 28px,28px 28px,140px 140px,140px 140px;
+    transition:background-color .3s,color .3s;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 24px 80px;}
+
+  /* nav */
+  .nav{display:flex;justify-content:space-between;align-items:center;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.02em;}
+  .brand .mark{width:24px;height:24px;display:block;}
+  .brand .wm span{color:var(--accent);}
+  .nav .r{display:flex;gap:8px;align-items:center;}
+  .ghost{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:7px 11px;border-radius:8px;cursor:pointer;background:var(--card);transition:color .15s,border-color .15s,background .15s;}
+  /* external monochrome icons: file + CSS mask so they take currentColor */
+  .ico{display:inline-block;flex:none;background-color:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;}
+  .ico-rss{width:15px;height:15px;-webkit-mask-image:url(./assets/rss.svg);mask-image:url(./assets/rss.svg);}
+  .ico-github{width:14px;height:14px;-webkit-mask-image:url(./assets/github.svg);mask-image:url(./assets/github.svg);}
+  .ico-gpu{-webkit-mask-image:url(./assets/cpu.svg);mask-image:url(./assets/cpu.svg);}
+  .ico-clock{-webkit-mask-image:url(./assets/clock.svg);mask-image:url(./assets/clock.svg);}
+  .ico-x{-webkit-mask-image:url(./assets/x.svg);mask-image:url(./assets/x.svg);}
+  .ico-telegram{width:15px;height:15px;-webkit-mask-image:url(./assets/telegram.svg);mask-image:url(./assets/telegram.svg);}
+  .ghost:hover{border-color:var(--ink);background:var(--bg);}
+
+  /* hero */
+  .hero{margin:54px 0 12px;}
+  .hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(32px,5.6vw,46px);line-height:1.04;letter-spacing:-0.03em;margin:0;max-width:18ch;}
+  .hero p{color:var(--muted);font-size:17px;margin:18px 0 26px;max-width:52ch;}
+  .cta{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:var(--on-accent);font-weight:600;font-size:15px;font-family:inherit;text-decoration:none;padding:13px 20px;border:none;border-radius:11px;cursor:pointer;transition:filter .15s;}
+  .cta:hover{filter:brightness(1.07);}
+  .cta-note{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);margin-left:14px;}
+
+  /* subscribe dropdown */
+  .sub{position:relative;display:inline-block;}
+  .cta .caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;margin-left:4px;transition:transform .18s;}
+  .sub.open .caret{transform:rotate(180deg);}
+  .submenu{position:absolute;top:calc(100% + 8px);left:0;min-width:214px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px;z-index:30;box-shadow:0 16px 40px -16px rgba(0,0,0,.55);display:flex;flex-direction:column;gap:2px;animation:pop .14s ease both;}
+  .submenu[hidden]{display:none;}
+  @keyframes pop{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
+  .submenu a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;}
+  .submenu a:hover{background:var(--line-2);}
+  .submenu a small{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);}
+  .submenu .ico-telegram{color:#229ED9;}
+  .sub-sep{height:1px;background:var(--line);margin:5px 6px;}
+  .submenu .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+  .submenu .dot.both{background:conic-gradient(var(--claude) 0 50%,var(--codex) 50% 100%);}
+  .submenu .dot.claude{background:var(--claude);}
+  .submenu .dot.codex{background:var(--codex);}
+
+  /* status cards */
+  .cards{margin-top:46px;display:flex;flex-direction:column;gap:12px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;}
+  .card .logo{flex:none;display:grid;place-items:center;}
+  .card .logo .lg{width:40px;height:40px;display:block;}
+  .card .mid{flex:1;min-width:0;}
+  .card .nm{font-weight:600;font-size:16px;}
+  .card .nm a{color:var(--dim);font-weight:400;font-family:"IBM Plex Mono",monospace;font-size:12px;margin-left:8px;text-decoration:none;}
+  .card .nm a:hover{color:var(--muted);}
+  .card .q{color:var(--muted);font-size:14px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .card .val{text-align:right;flex:none;}
+  .card .val small{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+  .card .val .ago{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px;color:var(--muted);letter-spacing:-0.01em;line-height:1;white-space:nowrap;}
+  .card .val .ago .num{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums;margin-right:2px;}
+  .card.claude .val .ago .num{color:var(--claude);} .card.codex .val .ago .num{color:var(--codex);}
+  .card .val .ago.none{color:var(--dim);font-size:18px;}
+
+  /* timeline graph */
+  .graph{margin-top:40px;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:20px 22px 16px;}
+  .graph .gh{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;}
+  .graph .gh h2{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0;font-weight:600;}
+  select{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 9px;cursor:pointer;}
+  .legend{display:flex;gap:18px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+  .legend i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:middle;}
+  .legend .c{background:var(--claude);} .legend .x{background:var(--codex);}
+
+  /* timeline: a strip plot read off one authoritative ruler axis - no glow */
+  .tl{position:relative;height:112px;margin:2px 0 0;--base:26px;}
+  .axis{position:absolute;left:0;right:0;bottom:var(--base);height:1px;background:color-mix(in srgb,var(--ink) 34%,transparent);}
+  .axis::before,.axis::after{content:"";position:absolute;bottom:0;width:1px;height:5px;background:inherit;}
+  .axis::before{left:0;} .axis::after{right:0;}
+  .vtick{position:absolute;bottom:calc(var(--base) - 5px);width:1px;height:5px;background:color-mix(in srgb,var(--ink) 26%,transparent);}
+  .ml{position:absolute;bottom:0;transform:translateX(-50%);font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.03em;color:var(--dim);white-space:nowrap;}
+  .now{position:absolute;right:0;top:10px;bottom:var(--base);width:1px;background:repeating-linear-gradient(to bottom,color-mix(in srgb,var(--ink) 24%,transparent) 0 3px,transparent 3px 6px);}
+  .now span{position:absolute;top:-2px;right:5px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);}
+  .stem{position:absolute;bottom:var(--base);width:1.5px;height:54px;background:currentColor;cursor:pointer;text-decoration:none;transform-origin:bottom;animation:rise .5s cubic-bezier(.2,.8,.2,1) both;}
+  .stem.claude{color:var(--claude);} .stem.codex{color:var(--codex);}
+  .stem::before{content:"";position:absolute;left:-8px;right:-8px;top:-8px;bottom:-6px;}
+  .stem::after{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 2px var(--card);transition:transform .14s;}
+  .stem:hover{z-index:5;}
+  .stem:hover::after{transform:translateX(-50%) scale(1.6);}
+  .tip .ts{display:block;margin-top:4px;opacity:.62;}
+  @keyframes rise{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+  .tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;
+    background:var(--ink);color:var(--bg);font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.5;padding:7px 10px;border-radius:8px;white-space:normal;width:max-content;max-width:240px;z-index:6;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);}
+  .tip b{font-weight:600;}
+  .stem:hover .tip{opacity:1;transform:translateX(-50%);}
+  .graph .none{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);padding:34px 0;text-align:center;}
+
+  /* recent list: robust grid, no overlap */
+  .recent{margin-top:42px;}
+  .recent h2{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0;}
+  .rhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:4px;}
+  .pager{display:flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--dim);}
+  .pager button{font-family:inherit;font-size:13px;line-height:1;color:var(--ink);background:none;border:1px solid var(--line);border-radius:7px;width:26px;height:24px;cursor:pointer;transition:border-color .15s,color .15s;}
+  .pager button:hover:not(:disabled){border-color:var(--ink);}
+  .pager button:disabled{color:var(--dim);opacity:.45;cursor:default;}
+  .recent .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .thead{display:grid;grid-template-columns:104px 58px 1fr auto;gap:14px;padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);}
+  .e{display:grid;grid-template-columns:104px 58px 1fr auto;gap:14px;padding:14px 20px;border-top:1px solid var(--line-2);align-items:baseline;transition:background .12s;}
+  .e:first-child{border-top:none;}
+  .e:hover{background:var(--line-2);}
+  @media(max-width:560px){.thead{display:none;} .e{grid-template-columns:1fr;gap:3px;}}
+  .e time{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--dim);white-space:nowrap;}
+  .e .b{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+  .e .b.claude{color:var(--claude);} .e .b.codex{color:var(--codex);}
+  .e .tx{font-size:14px;min-width:0;}
+  .e .tx a{color:inherit;text-decoration:none;} .e .tx a:hover{text-decoration:underline;}
+  .e .src{color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:11px;white-space:nowrap;text-decoration:none;}
+  .e .src:hover{color:var(--ink);}
+
+  .usecases{margin-top:46px;}
+  .usecases h2{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;}
+  .uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media(max-width:640px){.uc-grid{grid-template-columns:1fr;}}
+  .uc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 20px;}
+  .uc-top{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+  .uc-ico{width:20px;height:20px;color:var(--accent);}
+  .uc .k{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--accent);letter-spacing:.1em;}
+  .uc h3{font-family:"Bricolage Grotesque",sans-serif;font-size:16px;font-weight:600;letter-spacing:-0.01em;margin:0 0 6px;}
+  .uc p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55;}
+
+  .foot{margin-top:40px;color:var(--dim);font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.7;}
+  .foot a{color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <span class="brand">
+      <img class="mark" src="./assets/radar.svg" alt="" width="24" height="24" />
+      <span class="wm">Reset<span>Radar</span></span>
+    </span>
+    <span class="r">
+      <a class="ghost" href="./latest.json">JSON</a>
+      <a class="ghost" href="https://github.com/giuliocapecchi/ResetRadar"><span class="ico ico-github"></span>GitHub</a>
+      <button class="ghost" id="theme" aria-label="Toggle theme">☀ Light</button>
+    </span>
+  </nav>
+
+  <section class="hero">
+    <h1>Never miss a Claude Code or Codex free limit reset.</h1>
+    <p>Claude Code and Codex quietly reset everyone's limits for free. The only heads-up is a tweet that's easy to miss. Subscribe once and catch every reset.</p>
+    <span class="sub" id="sub">
+      <button class="cta" id="subBtn" aria-haspopup="true" aria-expanded="false"><span class="ico ico-rss"></span>Subscribe<span class="caret"></span></button>
+      <div class="submenu" id="subMenu" role="menu" hidden>
+        <a role="menuitem" href="https://t.me/ResetRadar" target="_blank" rel="noopener"><span class="ico ico-telegram"></span>Telegram channel<small>push</small></a>
+        <div class="sub-sep" role="separator"></div>
+        <a role="menuitem" href="./feed.xml"><span class="dot both"></span>Claude Code &amp; Codex<small>rss</small></a>
+        <a role="menuitem" href="./feed-claude.xml"><span class="dot claude"></span>Claude Code<small>rss</small></a>
+        <a role="menuitem" href="./feed-codex.xml"><span class="dot codex"></span>Codex<small>rss</small></a>
+      </div>
+    </span>
+    <span class="cta-note">free · any reader · no signup</span>
+  </section>
+
+  <div class="cards" id="cards"></div>
+
+  <section class="graph">
+    <div class="gh">
+      <h2>Resets over time</h2>
+      <select id="range">
+        <option value="1">Last 1 month</option>
+        <option value="3">Last 3 months</option>
+        <option value="6">Last 6 months</option>
+      </select>
+    </div>
+    <div id="plot"></div>
+  </section>
+
+  <section class="recent">
+    <div class="rhead"><h2>Recent resets</h2><div class="pager" id="pager"></div></div>
+    <div class="panel">
+      <div class="thead"><span>Date</span><span>Plat</span><span>Announcement</span><span>Source</span></div>
+      <div id="log"></div>
+    </div>
+  </section>
+
+  <section class="usecases">
+    <h2>Use cases</h2>
+    <div class="uc-grid">
+      <div class="uc"><div class="uc-top"><span class="ico ico-gpu uc-ico"></span><span class="k">01</span></div><h3>Reclaim wasted compute</h3><p>A free reset can land just before your own weekly rollover. Catch it and that's a whole quota you'd otherwise waste.</p></div>
+      <div class="uc"><div class="uc-top"><span class="ico ico-clock uc-ico"></span><span class="k">02</span></div><h3>Time the heavy work</h3><p>They're not rare, check the graph. When one drops, run the heavy stuff: a big refactor, a security audit, a repo-wide review.</p></div>
+      <div class="uc"><div class="uc-top"><span class="ico ico-x uc-ico"></span><span class="k">03</span></div><h3>Stop babysitting X</h3><p>Stop refreshing the official accounts. Subscribe once and know the second a reset lands.</p></div>
+    </div>
+  </section>
+
+  <div class="foot">Something's missing? <a href="https://github.com/giuliocapecchi/ResetRadar/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.<br>Source: official X accounts (via Nitter). Not affiliated with Anthropic or OpenAI.<br><span id="generated"></span></div>
+</div>
+
+<script>
+  const NAME = { claude: "Claude / Claude Code", codex: "Codex / ChatGPT" };
+  const LOGO = {
+    claude: '<img class="lg" src="./assets/claudecode.svg" alt="Claude Code" />',
+    codex: '<img class="lg" src="./assets/codex.svg" alt="Codex" />',
+  };
+  const LEGEND = `<div class="legend"><span><i class="c"></i>Claude</span><span><i class="x"></i>Codex</span></div>`;
+  let EVENTS = [];  // confirmed/corroborated resets, newest-first (sorted once after fetch)
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+  function safeUrl(u){return /^https?:\/\//i.test(String(u||""))?esc(u):"#";}
+  function whenOf(e){return e.effective_at||e.first_seen;}
+  function srcUrl(e){return e.source_urls&&e.source_urls[0];}
+  function daysSince(iso){return Math.floor((Date.now()-new Date(iso))/86400000);}
+  function agoHtml(iso){const d=Math.max(0,daysSince(iso));
+    if(d===0)return `<span class="num">today</span>`;
+    return `<span class="num">${d}</span>${d===1?"day":"days"} ago`;}
+  function shortDate(iso){return new Date(iso).toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"});}
+  function stamp(iso){return new Date(iso).toUTCString().replace("GMT","UTC");}
+  function handle(e){let host="";try{host=new URL(srcUrl(e)).host;}catch(x){}const h=(e.account||"").replace(/^@/,"");
+    if(/(^|\.)x\.com$|twitter\.com$/.test(host))return h?"@"+h:"X";
+    if(/reddit\.com$/.test(host))return h?"u/"+h:"Reddit";
+    return h||"source";}
+
+  function renderCards(d){
+    document.getElementById("cards").innerHTML=["claude","codex"].map(p=>{
+      const e=d.platforms[p];
+      if(!e) return `<div class="card ${p}"><div class="logo">${LOGO[p]}</div>
+        <div class="mid"><div class="nm">${NAME[p]}</div><div class="q" style="color:var(--dim)">no reset on record</div></div>
+        <div class="val"><small>latest reset</small><div class="ago none">-</div></div></div>`;
+      return `<div class="card ${p}"><div class="logo">${LOGO[p]}</div>
+        <div class="mid"><div class="nm">${NAME[p]} <a href="${safeUrl(srcUrl(e))}" target="_blank" rel="noopener">${esc(handle(e))} ↗</a></div>
+          <div class="q">${esc(e.detail)}</div></div>
+        <div class="val"><small>latest reset</small><div class="ago">${agoHtml(whenOf(e))}</div></div></div>`;
+    }).join("");
+  }
+
+  const PAGE_SIZE=8; let page=0;
+  function renderLog(){
+    const log=document.getElementById("log"), pager=document.getElementById("pager");
+    if(!EVENTS.length){log.innerHTML=`<div class="e" style="color:var(--dim)">no recent global resets, nothing missed</div>`;pager.innerHTML="";return;}
+    const pages=Math.ceil(EVENTS.length/PAGE_SIZE);
+    page=Math.max(0,Math.min(page,pages-1));
+    const slice=EVENTS.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
+    log.innerHTML=slice.map(e=>`<div class="e">
+        <time>${shortDate(whenOf(e))}</time>
+        <span class="b ${e.platform}">${esc(e.platform)}</span>
+        <span class="tx"><a href="${safeUrl(srcUrl(e))}" target="_blank" rel="noopener">${esc(e.detail)}</a></span>
+        <a class="src" href="${safeUrl(srcUrl(e))}" target="_blank" rel="noopener">${esc(handle(e))}</a></div>`).join("");
+    const from=page*PAGE_SIZE+1, to=Math.min((page+1)*PAGE_SIZE,EVENTS.length);
+    pager.innerHTML=`<button id="prev" ${page===0?"disabled":""}>‹</button>`+
+      `<span>${from}–${to} of ${EVENTS.length}</span>`+
+      `<button id="next" ${page>=pages-1?"disabled":""}>›</button>`;
+    const pv=document.getElementById("prev"),nx=document.getElementById("next");
+    if(pv)pv.onclick=()=>{page--;renderLog();};
+    if(nx)nx.onclick=()=>{page++;renderLog();};
+  }
+
+  function renderGraph(months){
+    const plot=document.getElementById("plot");
+    const now=new Date();
+    const start=new Date(now); start.setMonth(start.getMonth()-months); start.setHours(0,0,0,0);
+    const span=now-start;
+
+    const inRange=EVENTS.filter(e=>{const t=new Date(whenOf(e));return t>=start&&t<=now;});
+    if(!inRange.length){ plot.innerHTML=LEGEND+`<div class="none">no resets detected in the last ${months} month${months>1?"s":""}</div>`; return; }
+
+    // X-axis ticks: weekly for the 1-month view, otherwise one per calendar month.
+    const pos=t=>((t-start)/span)*100;
+    const ticks=[];
+    if(months===1){
+      for(let i=0;i<=4;i++){const d=new Date(start.getTime()+i*7*864e5); if(d>now)break;
+        ticks.push({d,label:d.toLocaleDateString("en-GB",{day:"2-digit",month:"short"})});}
+    } else {
+      for(let d=new Date(start.getFullYear(),start.getMonth()+1,1); d<=now; d.setMonth(d.getMonth()+1))
+        ticks.push({d:new Date(d),label:d.toLocaleDateString("en-GB",{month:"short"})});
+    }
+    const ruler=ticks.map(t=>{const x=pos(t.d), xs=x.toFixed(2);
+      const tf=x<6?"translateX(0)":x>94?"translateX(-100%)":"translateX(-50%)";
+      return `<div class="vtick" style="left:${xs}%"></div><span class="ml" style="left:${xs}%;transform:${tf}">${esc(t.label)}</span>`;}).join("");
+
+    // One vertical line per reset, placed on its exact day.
+    const stems=inRange.map(e=>{
+      const t=new Date(whenOf(e)), cls=e.platform==="codex"?"codex":"claude", p=pos(t);
+      const day=t.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"});
+      const plat=cls==="codex"?"Codex":"Claude";
+      const tip=`<div class="tip"><b>${esc(day)}</b> · ${plat}<br>${esc(e.detail||"reset")}<span class="ts">${esc(handle(e))} ↗</span></div>`;
+      const url=safeUrl(srcUrl(e)), ext=url==="#"?"":' target="_blank" rel="noopener"';
+      return `<a class="stem ${cls}" style="left:${p.toFixed(2)}%;animation-delay:${(p/100*.4).toFixed(2)}s" href="${url}"${ext}>${tip}</a>`;
+    }).join("");
+
+    plot.innerHTML=LEGEND+`<div class="tl"><div class="axis"></div>${ruler}${stems}<div class="now"><span>now</span></div></div>`;
+  }
+
+  function applyTheme(t){document.documentElement.dataset.theme=t;document.getElementById("theme").textContent=t==="dark"?"☀ Light":"☾ Dark";try{localStorage.setItem("rr-theme",t);}catch(x){}}
+
+  fetch("./latest.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
+    EVENTS=(d.recent||[])
+      .sort((a,b)=>new Date(whenOf(b))-new Date(whenOf(a)));  // newest-first, once
+    renderCards(d);
+    renderLog();
+    renderGraph(parseInt(document.getElementById("range").value,10));
+    document.getElementById("range").addEventListener("change",ev=>renderGraph(parseInt(ev.target.value,10)));
+    if(d.generated_at) document.getElementById("generated").textContent="latest update: "+stamp(d.generated_at)+" · refreshing hourly";
+  }).catch(()=>{document.getElementById("cards").innerHTML=`<div class="card"><div class="mid">Could not load data.</div></div>`;});
+
+  // theme: dark default, remembered
+  (function(){let t="dark";try{t=localStorage.getItem("rr-theme")||"dark";}catch(x){}applyTheme(t);})();
+  document.getElementById("theme").onclick=()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");
+
+  // subscribe dropdown: pick the combined or a per-platform feed
+  (function(){
+    const sub=document.getElementById("sub"), btn=document.getElementById("subBtn"), menu=document.getElementById("subMenu");
+    const close=()=>{menu.hidden=true;sub.classList.remove("open");btn.setAttribute("aria-expanded","false");};
+    btn.addEventListener("click",e=>{e.stopPropagation();const open=menu.hidden;menu.hidden=!open;sub.classList.toggle("open",open);btn.setAttribute("aria-expanded",String(open));});
+    document.addEventListener("click",e=>{if(!sub.contains(e.target))close();});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")close();});
+    menu.addEventListener("click",close);
+  })();
+</script>
+</body>
+</html>

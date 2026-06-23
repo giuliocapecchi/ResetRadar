@@ -1,0 +1,347 @@
+{
+  "generated_at": "2026-06-23T22:11:47.821283+00:00",
+  "platforms": {
+    "claude": {
+      "id": "claude:goodwill_reset:2026-06-20T00:05:06+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Update: we've gone ahead and reset 5-hour and weekly usage limits for everyone, across all plans. Enjoy your weekend!",
+      "first_seen": "2026-06-20T00:05:06+00:00",
+      "source_urls": [
+        "https://x.com/claudedevs/status/2068122937308426676",
+        "https://x.com/ClaudeDevs/status/2068122937308426676"
+      ],
+      "account": "claudedevs"
+    },
+    "codex": {
+      "id": "codex:limit_increase:2026-06-18T00:10:10+00:00",
+      "platform": "codex",
+      "type": "limit_increase",
+      "title": "Codex: Usage limits increased",
+      "detail": "Dearest gentle codexer. We did a sneaky double reset. Not only do you get a full reset on us. But you are also getting one into the reset bank to use at your own leisure. Enjoy",
+      "first_seen": "2026-06-18T00:10:10+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2067399435009622521"
+      ],
+      "account": "thsottiaux"
+    }
+  },
+  "recent": [
+    {
+      "id": "claude:goodwill_reset:2026-06-20T00:05:06+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Update: we've gone ahead and reset 5-hour and weekly usage limits for everyone, across all plans. Enjoy your weekend!",
+      "first_seen": "2026-06-20T00:05:06+00:00",
+      "source_urls": [
+        "https://x.com/claudedevs/status/2068122937308426676",
+        "https://x.com/ClaudeDevs/status/2068122937308426676"
+      ],
+      "account": "claudedevs"
+    },
+    {
+      "id": "claude:goodwill_reset:2026-06-19T02:50:28+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Earlier today, ~3% of Claude Code Max and Pro users hit a bug that showed an incorrect weekly usage limit, and in some cases blocked them from sending messages. This is fixed, and we're resetting 5-hour and weekly limits for everyone aff\u2026",
+      "first_seen": "2026-06-19T02:50:28+00:00",
+      "source_urls": [
+        "https://x.com/claudedevs/status/2067802163498352929",
+        "https://x.com/ClaudeDevs/status/2067802163498352929"
+      ],
+      "effective_at": "2026-06-19T02:50:28+00:00",
+      "account": "claudedevs"
+    },
+    {
+      "id": "codex:limit_increase:2026-06-18T00:10:10+00:00",
+      "platform": "codex",
+      "type": "limit_increase",
+      "title": "Codex: Usage limits increased",
+      "detail": "Dearest gentle codexer. We did a sneaky double reset. Not only do you get a full reset on us. But you are also getting one into the reset bank to use at your own leisure. Enjoy",
+      "first_seen": "2026-06-18T00:10:10+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2067399435009622521"
+      ],
+      "account": "thsottiaux"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-06-16T18:49:52+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "This was fixed. You know what's coming \ud83d\udc40 Give us 24 hours to reset the Codex rate limits across all plans.",
+      "first_seen": "2026-06-16T18:49:52+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2066956441173323943"
+      ],
+      "account": "thsottiaux"
+    },
+    {
+      "id": "claude:goodwill_reset:2026-06-13T00:50:03+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign nationa\u2026",
+      "first_seen": "2026-06-13T00:50:03+00:00",
+      "source_urls": [
+        "https://x.com/anthropicai/status/2065597531644743999",
+        "https://x.com/trq212/status/2065597531644743999",
+        "https://x.com/trq212/status/2065621176735646006",
+        "https://x.com/ClaudeDevs/status/2065621176735646006"
+      ],
+      "account": "anthropicai"
+    },
+    {
+      "id": "codex:free_reset:2026-06-12T00:11:11+00:00",
+      "platform": "codex",
+      "type": "free_reset",
+      "title": "Codex: Free usage-limit reset granted",
+      "detail": "We heard you wanted to use Codex rate limit resets on your own time. Starting today, we\u2019re rolling out the ability to save rate limit resets to use later. We\u2019re starting Go, Plus, Pro, and Business users with one free reset:",
+      "first_seen": "2026-06-12T00:11:11+00:00",
+      "source_urls": [
+        "https://x.com/OpenAI/status/2065225362544726371"
+      ],
+      "effective_at": "2026-06-12T00:11:11+00:00",
+      "account": "OpenAI"
+    },
+    {
+      "id": "claude:goodwill_reset:2026-06-09T21:48:01+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "RT by @trq212: We've reset 5-hour and weekly rate limits for all users. Enjoy Fable 5!",
+      "first_seen": "2026-06-09T21:48:01+00:00",
+      "source_urls": [
+        "https://x.com/trq212/status/2064464557951852643"
+      ],
+      "account": "trq212"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-06-04T00:25:58+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Hi. Over the last 24 hours we had three separate small incidents that affected Codex reliability. Those are three too many and we are taking active steps for them to not reproduce. I have reset usage limits for Codex across all paid plan\u2026",
+      "first_seen": "2026-06-04T00:25:58+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2062329981548802523"
+      ],
+      "account": "thsottiaux"
+    },
+    {
+      "id": "claude:goodwill_reset:2026-06-01T17:35:01+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "We've reset 5-hour and weekly rate limits for all users on Pro and Max plans. We fixed an issue that caused some Claude Code sessions to spawn excessive parallel subagents, burning through usage faster than expected.",
+      "first_seen": "2026-06-01T17:35:01+00:00",
+      "source_urls": [
+        "https://x.com/ClaudeDevs/status/2061501787769893055"
+      ],
+      "account": "ClaudeDevs"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-05-31T15:25:06+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "The Codex usage limits have been reset for all paid ChatGPT subscriptions. You should be back to 100% weekly and 100% hourly limits. Let the tokens do incredible things today and have fun.",
+      "first_seen": "2026-05-31T15:25:06+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2061106703446450392"
+      ],
+      "effective_at": "2026-05-31T15:25:06+00:00",
+      "account": "thsottiaux"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-05-31T05:59:10+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "RT by @sama: Five million users would agree. Resetting the limits tomorrow morning to celebrate. Time to go /fast",
+      "first_seen": "2026-05-31T05:59:10+00:00",
+      "source_urls": [
+        "https://x.com/sama/status/2060964284117782996"
+      ],
+      "account": "sama"
+    },
+    {
+      "id": "claude:limit_increase:2026-05-28T16:59:09+00:00",
+      "platform": "claude",
+      "type": "limit_increase",
+      "title": "Claude: Usage limits increased",
+      "detail": "Opus 4.8 defaults to high effort. For coding tasks, it spends similar tokens to the 4.7 default while delivering better performance. For difficult tasks and long-running async work, use xhigh. We\u2019ve increased rate limits in Claude Code t\u2026",
+      "first_seen": "2026-05-28T16:59:09+00:00",
+      "source_urls": [
+        "https://x.com/ClaudeDevs/status/2060043211129909732",
+        "https://x.com/_catwu/status/2060051279494181022"
+      ],
+      "account": "ClaudeDevs"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-05-23T20:14:35+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Some of you noticed limits drained faster in Codex, we root caused it to an optimization that we rolled back that had an impact on cache hit rates when compacting across long running sessions. We fixed this and have now reset usage limit\u2026",
+      "first_seen": "2026-05-23T20:14:35+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2058280452851638313"
+      ],
+      "effective_at": "2026-05-23T20:14:35+00:00",
+      "account": "thsottiaux"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-05-16T17:51:03+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Codex usage limits have now been reset across all paid plans. Enjoy the weekend!",
+      "first_seen": "2026-05-16T17:51:03+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2055707616605835333"
+      ],
+      "effective_at": "2026-05-16T17:51:03+00:00",
+      "account": "thsottiaux"
+    },
+    {
+      "id": "claude:goodwill_reset:2026-05-15T18:00:14+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Happy Friday! We've reset everyone's 5-hour and weekly rate limits.",
+      "first_seen": "2026-05-15T18:00:14+00:00",
+      "source_urls": [
+        "https://x.com/ClaudeDevs/status/2055347539923308703"
+      ],
+      "account": "ClaudeDevs"
+    },
+    {
+      "id": "claude:limit_increase:2026-05-13T19:07:51+00:00",
+      "platform": "claude",
+      "type": "limit_increase",
+      "title": "Claude: Usage limits increased",
+      "detail": "Claude Code weekly limits are increasing 50%, now through July 13. Live now for all Pro, Max, Team, and seat-based Enterprise users.",
+      "first_seen": "2026-05-13T19:07:51+00:00",
+      "source_urls": [
+        "https://x.com/ClaudeDevs/status/2054639777685934564"
+      ],
+      "effective_at": "2026-05-13T19:07:51+00:00",
+      "account": "ClaudeDevs"
+    },
+    {
+      "id": "claude:limit_increase:2026-05-06T16:36:21+00:00",
+      "platform": "claude",
+      "type": "limit_increase",
+      "title": "Claude: Usage limits increased",
+      "detail": "Usage limits are up, effective today we're: 1) Doubling Claude Code's 5-hour limits for Pro, Max, Team and seat-based Enterprise plans 2) Removing peak hours limit reduction on Claude Code for Pro and Max plans 3) Substantially raising o\u2026",
+      "first_seen": "2026-05-06T16:36:21+00:00",
+      "source_urls": [
+        "https://x.com/ClaudeDevs/status/2052064938840228237"
+      ],
+      "effective_at": "2026-05-06T16:36:21+00:00",
+      "account": "ClaudeDevs"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-04-28T05:28:43+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Don't just reset Codex rate limits for fun, it costs money. Don't just reset Codex rate limits for fun, it costs money. ... but the vibes are good ... I have reset Codex rate limits for ALL paid plans to celebrate a good week and allow e\u2026",
+      "first_seen": "2026-04-28T05:28:43+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2048997818673537399"
+      ],
+      "account": "thsottiaux"
+    },
+    {
+      "id": "claude:goodwill_reset:2026-04-23T17:44:48+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Over the past month, some of you reported Claude Code's quality had slipped. We investigated, and published a post-mortem on the three issues we found. All are fixed in v2.1.116+ and we\u2019ve reset usage limits for all subscribers.",
+      "first_seen": "2026-04-23T17:44:48+00:00",
+      "source_urls": [
+        "https://x.com/ClaudeDevs/status/2047371123185287223"
+      ],
+      "account": "ClaudeDevs"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-04-21T15:00:28+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Codex hit 4M active users, less than two weeks after hitting 3M. We will reset rate limits today!",
+      "first_seen": "2026-04-21T15:00:28+00:00",
+      "source_urls": [
+        "https://x.com/sama/status/2046604989527912590"
+      ],
+      "effective_at": "2026-04-21T15:00:28+00:00",
+      "account": "sama"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-04-17T00:58:21+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Hi! To celebrate its 1-year anniversary, I have allowed Codex to reset its own rate limits across all plans. Enjoy all the new features.",
+      "first_seen": "2026-04-17T00:58:21+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2044943514832871564"
+      ],
+      "account": "thsottiaux"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-04-09T17:38:16+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Our existing $200 Pro tier still remains our highest usage option. And as a thank you to our existing Pro users on the $200 tier, we\u2019re extending our 2x Codex usage promo (until May 31st) and we\u2019ve reset your Codex rate limits (yes, again).",
+      "first_seen": "2026-04-09T17:38:16+00:00",
+      "source_urls": [
+        "https://x.com/OpenAI/status/2042296046009626989"
+      ],
+      "account": "OpenAI"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-04-07T23:13:48+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Three million people are now using Codex weekly - up from two million a little under a month ago. Incredible to see the growth. Thank you to all of you and to the ecosystem we\u2019re part of. To celebrate, we\u2019re resetting rate limits so you \u2026",
+      "first_seen": "2026-04-07T23:13:48+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2041655710346572085"
+      ],
+      "effective_at": "2026-04-07T23:13:48+00:00",
+      "account": "thsottiaux"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-03-27T01:52:28+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "Hello. We have reset Codex usage limits across all plans to let everyone experiment with the magnificent plugins we just launched, and because it had been a while! You can just build unlimited things with Codex. Have fun!",
+      "first_seen": "2026-03-27T01:52:28+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2037346989244096581"
+      ],
+      "account": "thsottiaux"
+    },
+    {
+      "id": "codex:goodwill_reset:2026-03-11T05:38:13+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "OK, Codex is back and stable and we should be good for a while. Reset button pressed, should see it in a bit",
+      "first_seen": "2026-03-11T05:38:13+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2031605592352313567"
+      ],
+      "account": "thsottiaux"
+    }
+  ]
+}

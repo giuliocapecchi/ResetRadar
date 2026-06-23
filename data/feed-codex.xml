@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ResetRadar: Codex usage-limit resets</title>
+    <link>https://giuliocapecchi.github.io/ResetRadar/</link>
+    <atom:link href="https://giuliocapecchi.github.io/ResetRadar/feed-codex.xml" rel="self" type="application/rss+xml" />
+    <description>Global Codex usage-limit resets.</description>
+    <lastBuildDate>Tue, 23 Jun 2026 22:11:47 +0000</lastBuildDate>
+    <item>
+      <title>Codex: Usage limits increased</title>
+      <link>https://x.com/thsottiaux/status/2067399435009622521</link>
+      <guid isPermaLink="false">codex:limit_increase:2026-06-18T00:10:10+00:00</guid>
+      <category>codex</category>
+      <pubDate>Thu, 18 Jun 2026 00:10:10 +0000</pubDate>
+      <description>Dearest gentle codexer. We did a sneaky double reset. Not only do you get a full reset on us. But you are also getting one into the reset bank to use at your own leisure. Enjoy</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2066956441173323943</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-06-16T18:49:52+00:00</guid>
+      <category>codex</category>
+      <pubDate>Tue, 16 Jun 2026 18:49:52 +0000</pubDate>
+      <description>This was fixed. You know what's coming 👀 Give us 24 hours to reset the Codex rate limits across all plans.</description>
+    </item>
+    <item>
+      <title>Codex: Free usage-limit reset granted</title>
+      <link>https://x.com/OpenAI/status/2065225362544726371</link>
+      <guid isPermaLink="false">codex:free_reset:2026-06-12T00:11:11+00:00</guid>
+      <category>codex</category>
+      <pubDate>Fri, 12 Jun 2026 00:11:11 +0000</pubDate>
+      <description>We heard you wanted to use Codex rate limit resets on your own time. Starting today, we’re rolling out the ability to save rate limit resets to use later. We’re starting Go, Plus, Pro, and Business users with one free reset:</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2062329981548802523</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-06-04T00:25:58+00:00</guid>
+      <category>codex</category>
+      <pubDate>Thu, 04 Jun 2026 00:25:58 +0000</pubDate>
+      <description>Hi. Over the last 24 hours we had three separate small incidents that affected Codex reliability. Those are three too many and we are taking active steps for them to not reproduce. I have reset usage limits for Codex across all paid plan…</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2061106703446450392</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-05-31T15:25:06+00:00</guid>
+      <category>codex</category>
+      <pubDate>Sun, 31 May 2026 15:25:06 +0000</pubDate>
+      <description>The Codex usage limits have been reset for all paid ChatGPT subscriptions. You should be back to 100% weekly and 100% hourly limits. Let the tokens do incredible things today and have fun.</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/sama/status/2060964284117782996</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-05-31T05:59:10+00:00</guid>
+      <category>codex</category>
+      <pubDate>Sun, 31 May 2026 05:59:10 +0000</pubDate>
+      <description>RT by @sama: Five million users would agree. Resetting the limits tomorrow morning to celebrate. Time to go /fast</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2058280452851638313</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-05-23T20:14:35+00:00</guid>
+      <category>codex</category>
+      <pubDate>Sat, 23 May 2026 20:14:35 +0000</pubDate>
+      <description>Some of you noticed limits drained faster in Codex, we root caused it to an optimization that we rolled back that had an impact on cache hit rates when compacting across long running sessions. We fixed this and have now reset usage limit…</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2055707616605835333</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-05-16T17:51:03+00:00</guid>
+      <category>codex</category>
+      <pubDate>Sat, 16 May 2026 17:51:03 +0000</pubDate>
+      <description>Codex usage limits have now been reset across all paid plans. Enjoy the weekend!</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2048997818673537399</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-04-28T05:28:43+00:00</guid>
+      <category>codex</category>
+      <pubDate>Tue, 28 Apr 2026 05:28:43 +0000</pubDate>
+      <description>Don't just reset Codex rate limits for fun, it costs money. Don't just reset Codex rate limits for fun, it costs money. ... but the vibes are good ... I have reset Codex rate limits for ALL paid plans to celebrate a good week and allow e…</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/sama/status/2046604989527912590</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-04-21T15:00:28+00:00</guid>
+      <category>codex</category>
+      <pubDate>Tue, 21 Apr 2026 15:00:28 +0000</pubDate>
+      <description>Codex hit 4M active users, less than two weeks after hitting 3M. We will reset rate limits today!</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2044943514832871564</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-04-17T00:58:21+00:00</guid>
+      <category>codex</category>
+      <pubDate>Fri, 17 Apr 2026 00:58:21 +0000</pubDate>
+      <description>Hi! To celebrate its 1-year anniversary, I have allowed Codex to reset its own rate limits across all plans. Enjoy all the new features.</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/OpenAI/status/2042296046009626989</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-04-09T17:38:16+00:00</guid>
+      <category>codex</category>
+      <pubDate>Thu, 09 Apr 2026 17:38:16 +0000</pubDate>
+      <description>Our existing $200 Pro tier still remains our highest usage option. And as a thank you to our existing Pro users on the $200 tier, we’re extending our 2x Codex usage promo (until May 31st) and we’ve reset your Codex rate limits (yes, again).</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2041655710346572085</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-04-07T23:13:48+00:00</guid>
+      <category>codex</category>
+      <pubDate>Tue, 07 Apr 2026 23:13:48 +0000</pubDate>
+      <description>Three million people are now using Codex weekly - up from two million a little under a month ago. Incredible to see the growth. Thank you to all of you and to the ecosystem we’re part of. To celebrate, we’re resetting rate limits so you …</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2037346989244096581</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-03-27T01:52:28+00:00</guid>
+      <category>codex</category>
+      <pubDate>Fri, 27 Mar 2026 01:52:28 +0000</pubDate>
+      <description>Hello. We have reset Codex usage limits across all plans to let everyone experiment with the magnificent plugins we just launched, and because it had been a while! You can just build unlimited things with Codex. Have fun!</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2031605592352313567</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-03-11T05:38:13+00:00</guid>
+      <category>codex</category>
+      <pubDate>Wed, 11 Mar 2026 05:38:13 +0000</pubDate>
+      <description>OK, Codex is back and stable and we should be good for a while. Reset button pressed, should see it in a bit</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/2004100061933064395</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2025-12-25T08:01:03+00:00</guid>
+      <category>codex</category>
+      <pubDate>Thu, 25 Dec 2025 08:01:03 +0000</pubDate>
+      <description>For Codex users, to thank you all for the fun we've had over the last months, our first gift is that we have **reset rate limits and are lifting the usage limits to 2X the usual limits until the 1st of Jan**. Wish you all a merry holiday…</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/embirico/status/2002110337563361492</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2025-12-19T20:14:36+00:00</guid>
+      <category>codex</category>
+      <pubDate>Fri, 19 Dec 2025 20:14:36 +0000</pubDate>
+      <description>Yes, Codex rate limits just got reset. Enjoy! Why: We're rolling a new way of counting usage to fix bugs where users previously saw inconsistent amounts of usage left. As part of this, usage is counts are resetting to zero.</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/thsottiaux/status/1995988609896513743</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2025-12-02T22:49:02+00:00</guid>
+      <category>codex</category>
+      <pubDate>Tue, 02 Dec 2025 22:49:02 +0000</pubDate>
+      <description>We have reset the usage limits for everyone in Codex, which helps us mitigate the issue the fastest and the team will continue to work on the underlying cause. This should propagate to all users over the next 10 mins, enjoy and apologies…</description>
+    </item>
+  </channel>
+</rss>
