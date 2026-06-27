@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T22:11:47.821283+00:00",
+  "generated_at": "2026-06-27T00:04:40.771991+00:00",
   "platforms": {
     "claude": {
       "id": "claude:goodwill_reset:2026-06-20T00:05:06+00:00",
@@ -15,19 +15,31 @@
       "account": "claudedevs"
     },
     "codex": {
-      "id": "codex:limit_increase:2026-06-18T00:10:10+00:00",
+      "id": "codex:goodwill_reset:2026-06-26T23:39:48+00:00",
       "platform": "codex",
-      "type": "limit_increase",
-      "title": "Codex: Usage limits increased",
-      "detail": "Dearest gentle codexer. We did a sneaky double reset. Not only do you get a full reset on us. But you are also getting one into the reset bank to use at your own leisure. Enjoy",
-      "first_seen": "2026-06-18T00:10:10+00:00",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "We are giving all Codex users a usage reset on the house. Should be showing in your accounts in the next few hours. We have applied some mitigations, but our investigation hasn't shown users being impacted at large. We are continuing to \u2026",
+      "first_seen": "2026-06-26T23:39:48+00:00",
       "source_urls": [
-        "https://x.com/thsottiaux/status/2067399435009622521"
+        "https://x.com/thsottiaux/status/2070653282440405046"
       ],
       "account": "thsottiaux"
     }
   },
   "recent": [
+    {
+      "id": "codex:goodwill_reset:2026-06-26T23:39:48+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "We are giving all Codex users a usage reset on the house. Should be showing in your accounts in the next few hours. We have applied some mitigations, but our investigation hasn't shown users being impacted at large. We are continuing to \u2026",
+      "first_seen": "2026-06-26T23:39:48+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2070653282440405046"
+      ],
+      "account": "thsottiaux"
+    },
     {
       "id": "claude:goodwill_reset:2026-06-20T00:05:06+00:00",
       "platform": "claude",
@@ -328,18 +340,6 @@
       "first_seen": "2026-03-27T01:52:28+00:00",
       "source_urls": [
         "https://x.com/thsottiaux/status/2037346989244096581"
-      ],
-      "account": "thsottiaux"
-    },
-    {
-      "id": "codex:goodwill_reset:2026-03-11T05:38:13+00:00",
-      "platform": "codex",
-      "type": "goodwill_reset",
-      "title": "Codex: Usage limits reset for everyone",
-      "detail": "OK, Codex is back and stable and we should be good for a while. Reset button pressed, should see it in a bit",
-      "first_seen": "2026-03-11T05:38:13+00:00",
-      "source_urls": [
-        "https://x.com/thsottiaux/status/2031605592352313567"
       ],
       "account": "thsottiaux"
     }
