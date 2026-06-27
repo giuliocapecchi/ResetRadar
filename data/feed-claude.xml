@@ -5,7 +5,15 @@
     <link>https://giuliocapecchi.github.io/ResetRadar/</link>
     <atom:link href="https://giuliocapecchi.github.io/ResetRadar/feed-claude.xml" rel="self" type="application/rss+xml" />
     <description>Global Claude Code usage-limit resets.</description>
-    <lastBuildDate>Sat, 27 Jun 2026 00:04:40 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 04:51:48 +0000</lastBuildDate>
+    <item>
+      <title>Claude: Usage limits reset for everyone</title>
+      <link>https://x.com/anthropicai/status/2070665903440871779</link>
+      <guid isPermaLink="false">claude:goodwill_reset:2026-06-27T00:29:57+00:00</guid>
+      <category>claude</category>
+      <pubDate>Sat, 27 Jun 2026 00:29:57 +0000</pubDate>
+      <description>Since June 12, we’ve been working closely with the US government to restore access to Claude Mythos 5 and Fable 5. Today, the government notified us that Mythos 5, our strongest cybersecurity model, can be redeployed to a set of US organ…</description>
+    </item>
     <item>
       <title>Claude: Usage limits reset for everyone</title>
       <link>https://x.com/claudedevs/status/2068122937308426676</link>

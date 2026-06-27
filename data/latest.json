@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-27T00:04:40.771991+00:00",
+  "generated_at": "2026-06-27T04:51:48.085057+00:00",
   "platforms": {
     "claude": {
-      "id": "claude:goodwill_reset:2026-06-20T00:05:06+00:00",
+      "id": "claude:goodwill_reset:2026-06-27T00:29:57+00:00",
       "platform": "claude",
       "type": "goodwill_reset",
       "title": "Claude: Usage limits reset for everyone",
-      "detail": "Update: we've gone ahead and reset 5-hour and weekly usage limits for everyone, across all plans. Enjoy your weekend!",
-      "first_seen": "2026-06-20T00:05:06+00:00",
+      "detail": "Since June 12, we\u2019ve been working closely with the US government to restore access to Claude Mythos 5 and Fable 5. Today, the government notified us that Mythos 5, our strongest cybersecurity model, can be redeployed to a set of US organ\u2026",
+      "first_seen": "2026-06-27T00:29:57+00:00",
       "source_urls": [
-        "https://x.com/claudedevs/status/2068122937308426676",
-        "https://x.com/ClaudeDevs/status/2068122937308426676"
+        "https://x.com/anthropicai/status/2070665903440871779"
       ],
-      "account": "claudedevs"
+      "effective_at": "2026-06-27T00:29:57+00:00",
+      "account": "anthropicai"
     },
     "codex": {
       "id": "codex:goodwill_reset:2026-06-26T23:39:48+00:00",
@@ -28,6 +28,19 @@
     }
   },
   "recent": [
+    {
+      "id": "claude:goodwill_reset:2026-06-27T00:29:57+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Since June 12, we\u2019ve been working closely with the US government to restore access to Claude Mythos 5 and Fable 5. Today, the government notified us that Mythos 5, our strongest cybersecurity model, can be redeployed to a set of US organ\u2026",
+      "first_seen": "2026-06-27T00:29:57+00:00",
+      "source_urls": [
+        "https://x.com/anthropicai/status/2070665903440871779"
+      ],
+      "effective_at": "2026-06-27T00:29:57+00:00",
+      "account": "anthropicai"
+    },
     {
       "id": "codex:goodwill_reset:2026-06-26T23:39:48+00:00",
       "platform": "codex",
@@ -329,18 +342,6 @@
         "https://x.com/thsottiaux/status/2041655710346572085"
       ],
       "effective_at": "2026-04-07T23:13:48+00:00",
-      "account": "thsottiaux"
-    },
-    {
-      "id": "codex:goodwill_reset:2026-03-27T01:52:28+00:00",
-      "platform": "codex",
-      "type": "goodwill_reset",
-      "title": "Codex: Usage limits reset for everyone",
-      "detail": "Hello. We have reset Codex usage limits across all plans to let everyone experiment with the magnificent plugins we just launched, and because it had been a while! You can just build unlimited things with Codex. Have fun!",
-      "first_seen": "2026-03-27T01:52:28+00:00",
-      "source_urls": [
-        "https://x.com/thsottiaux/status/2037346989244096581"
-      ],
       "account": "thsottiaux"
     }
   ]
