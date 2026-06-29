@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T04:51:48.085057+00:00",
+  "generated_at": "2026-06-29T00:06:28.831670+00:00",
   "platforms": {
     "claude": {
       "id": "claude:goodwill_reset:2026-06-27T00:29:57+00:00",
@@ -15,19 +15,31 @@
       "account": "anthropicai"
     },
     "codex": {
-      "id": "codex:goodwill_reset:2026-06-26T23:39:48+00:00",
+      "id": "codex:goodwill_reset:2026-06-28T23:54:07+00:00",
       "platform": "codex",
       "type": "goodwill_reset",
       "title": "Codex: Usage limits reset for everyone",
-      "detail": "We are giving all Codex users a usage reset on the house. Should be showing in your accounts in the next few hours. We have applied some mitigations, but our investigation hasn't shown users being impacted at large. We are continuing to \u2026",
-      "first_seen": "2026-06-26T23:39:48+00:00",
+      "detail": "As we are still investigating, I have reset everyone's Codex usage limits. This is a hard reset given some users had stacked up to three banked resets already that they can apply on their own schedule. Funnily enough, this week at OpenAI\u2026",
+      "first_seen": "2026-06-28T23:54:07+00:00",
       "source_urls": [
-        "https://x.com/thsottiaux/status/2070653282440405046"
+        "https://x.com/thsottiaux/status/2071381664853319742"
       ],
       "account": "thsottiaux"
     }
   },
   "recent": [
+    {
+      "id": "codex:goodwill_reset:2026-06-28T23:54:07+00:00",
+      "platform": "codex",
+      "type": "goodwill_reset",
+      "title": "Codex: Usage limits reset for everyone",
+      "detail": "As we are still investigating, I have reset everyone's Codex usage limits. This is a hard reset given some users had stacked up to three banked resets already that they can apply on their own schedule. Funnily enough, this week at OpenAI\u2026",
+      "first_seen": "2026-06-28T23:54:07+00:00",
+      "source_urls": [
+        "https://x.com/thsottiaux/status/2071381664853319742"
+      ],
+      "account": "thsottiaux"
+    },
     {
       "id": "claude:goodwill_reset:2026-06-27T00:29:57+00:00",
       "platform": "claude",
@@ -330,19 +342,6 @@
         "https://x.com/OpenAI/status/2042296046009626989"
       ],
       "account": "OpenAI"
-    },
-    {
-      "id": "codex:goodwill_reset:2026-04-07T23:13:48+00:00",
-      "platform": "codex",
-      "type": "goodwill_reset",
-      "title": "Codex: Usage limits reset for everyone",
-      "detail": "Three million people are now using Codex weekly - up from two million a little under a month ago. Incredible to see the growth. Thank you to all of you and to the ecosystem we\u2019re part of. To celebrate, we\u2019re resetting rate limits so you \u2026",
-      "first_seen": "2026-04-07T23:13:48+00:00",
-      "source_urls": [
-        "https://x.com/thsottiaux/status/2041655710346572085"
-      ],
-      "effective_at": "2026-04-07T23:13:48+00:00",
-      "account": "thsottiaux"
     }
   ]
 }
