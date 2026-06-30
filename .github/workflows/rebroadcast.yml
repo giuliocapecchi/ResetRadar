@@ -58,16 +58,22 @@ jobs:
               print("TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL_ID not set", file=sys.stderr)
               sys.exit(1)
 
+          payload = {
+              "chat_id": channel,
+              "text": _format(event),
+              "parse_mode": "HTML",
+              "disable_web_page_preview": False,
+          }
           resp = httpx.post(
               f"https://api.telegram.org/bot{token}/sendMessage",
-              json={
-                  "chat_id": channel,
-                  "text": _format(event),
-                  "parse_mode": "HTML",
-                  "disable_web_page_preview": False,
-              },
+              json=payload,
               timeout=15,
           )
-          resp.raise_for_status()
+          if not resp.is_success:
+              # Mask token; print the rest so we can see Telegram's complaint.
+              safe_payload = {**payload, "text": payload["text"][:500]}
+              print(f"status={resp.status_code} body={resp.text!r}", file=sys.stderr)
+              print(f"payload={safe_payload!r}", file=sys.stderr)
+              sys.exit(1)
           print(f"sent: {event.title}")
           PY
