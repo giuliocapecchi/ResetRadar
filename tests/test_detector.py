@@ -179,3 +179,21 @@ def test_funding_tweet_is_not_a_reset():
         account="AnthropicAI", posted_at=NOW,
     )
     assert detect([post], account_platform=ACCOUNTS, now=NOW) == []
+
+
+def test_model_access_restoration_is_not_a_reset():
+    # @AnthropicAI Jun 27 2026 announced restoring access to Mythos 5 / Fable 5
+    # after the US export-control directive. "restore access to <model>" is not
+    # a usage-limit reset; "restor" was over-broad in the reset vocabularies.
+    post = CandidatePost(
+        source="nitter",
+        url="https://x.com/anthropicai/status/2070665903440871779",
+        text="Since June 12, we've been working closely with the US government "
+        "to restore access to Claude Mythos 5 and Fable 5. Today, the government "
+        "notified us that Mythos 5, our strongest cybersecurity model, can be "
+        "redeployed to a set of US organizations that operate and defend "
+        "critical infrastructure.",
+        account="anthropicai",
+        posted_at=datetime(2026, 6, 27, 0, 29, 57, tzinfo=timezone.utc),
+    )
+    assert detect([post], account_platform=ACCOUNTS, now=NOW + timedelta(days=10)) == []

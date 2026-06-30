@@ -15,14 +15,16 @@ from .models import CandidatePost, ResetEvent
 # --- vocabularies -----------------------------------------------------------
 
 RESET_TERMS = re.compile(
-    r"\b(reset(?:ting|s|ted)?|restor(?:e|ed|ing)|grant(?:ed|ing)?|gave|giving|"
+    r"\b(reset(?:ting|s|ted)?|grant(?:ed|ing)?|gave|giving|"
     r"credit(?:ed|ing|s)?|bonus|extra|doubl(?:e|ed|ing)|increas(?:e|ed|ing)|"
     r"rais(?:e|ed|ing)|bump(?:ed|ing)?)\b",
     re.IGNORECASE,
 )
 # Core reset verbs - enough on their own for an official account ("reset button
-# pressed", "double reset"), see classify_post.
-RESET_CORE = re.compile(r"\b(reset(?:ting|s|ted)?|restor(?:e|ed|ing)|wiped|cleared)\b", re.IGNORECASE)
+# pressed", "double reset"), see classify_post. "restore" is intentionally not
+# here: it's used for service/model-access restoration ("restore access to Claude
+# Mythos 5") and not for usage-limit resets in practice.
+RESET_CORE = re.compile(r"\b(reset(?:ting|s|ted)?|wiped|cleared)\b", re.IGNORECASE)
 # No bare "usage": it co-occurs with non-reset chatter; require a limit word.
 LIMIT_TERMS = re.compile(
     r"(\blimits?\b|\bquota\b|rate.?limits?|\b5.?hour\b|\bweekly\b|\bcaps?\b)",
