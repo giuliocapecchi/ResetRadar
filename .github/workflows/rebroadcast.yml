@@ -1,0 +1,73 @@
+name: rebroadcast
+
+# Manually re-send an existing ledger event to the Telegram channel.
+# Used when an event was already broadcast with a misclassified title (e.g. a
+# reset announcement that the detector tagged as `limit_increase`) and the
+# corrected wording needs to reach subscribers. The normal poll only sends
+# events that are *new* to the ledger, so this gives a deliberate side channel.
+
+on:
+  workflow_dispatch:
+    inputs:
+      event_id:
+        description: "Event id, e.g. codex:goodwill_reset:2026-06-29T23:39:41+00:00"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  rebroadcast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v8.2.0
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Send event to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          EVENT_ID: ${{ inputs.event_id }}
+        run: |
+          uv run python - <<'PY'
+          import os, sys
+          from pathlib import Path
+
+          import httpx
+
+          from resetradar.outputs.telegram import _format
+          from resetradar.store import read_events
+
+          eid = os.environ["EVENT_ID"]
+          events = read_events(Path("data/events.json"))
+          if eid not in events:
+              print(f"event {eid} not in ledger", file=sys.stderr)
+              sys.exit(1)
+          event = events[eid]
+
+          token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+          channel = os.environ.get("TELEGRAM_CHANNEL_ID", "")
+          if not token or not channel:
+              print("TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL_ID not set", file=sys.stderr)
+              sys.exit(1)
+
+          resp = httpx.post(
+              f"https://api.telegram.org/bot{token}/sendMessage",
+              json={
+                  "chat_id": channel,
+                  "text": _format(event),
+                  "parse_mode": "HTML",
+                  "disable_web_page_preview": False,
+              },
+              timeout=15,
+          )
+          resp.raise_for_status()
+          print(f"sent: {event.title}")
+          PY
