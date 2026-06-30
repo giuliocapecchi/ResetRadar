@@ -1,9 +1,9 @@
 [
   {
-    "id": "codex:limit_increase:2026-06-29T23:39:41+00:00",
+    "id": "codex:goodwill_reset:2026-06-29T23:39:41+00:00",
     "platform": "codex",
-    "type": "limit_increase",
-    "title": "Codex: Usage limits increased",
+    "type": "goodwill_reset",
+    "title": "Codex: Usage limits reset for everyone",
     "detail": "Codex usage limits will be fully reset again in the next hour and we will credit one additional reset into your bank for your own usage over the next 24 hours. We investigated reports that Codex usage was being consumed faster than expec\u2026",
     "first_seen": "2026-06-29T23:39:41+00:00",
     "source_urls": [
@@ -78,10 +78,10 @@
     "account": "claudedevs"
   },
   {
-    "id": "codex:limit_increase:2026-06-18T00:10:10+00:00",
+    "id": "codex:goodwill_reset:2026-06-18T00:10:10+00:00",
     "platform": "codex",
-    "type": "limit_increase",
-    "title": "Codex: Usage limits increased",
+    "type": "goodwill_reset",
+    "title": "Codex: Usage limits reset for everyone",
     "detail": "Dearest gentle codexer. We did a sneaky double reset. Not only do you get a full reset on us. But you are also getting one into the reset bank to use at your own leisure. Enjoy",
     "first_seen": "2026-06-18T00:10:10+00:00",
     "source_urls": [

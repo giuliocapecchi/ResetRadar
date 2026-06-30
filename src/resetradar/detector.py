@@ -49,6 +49,12 @@ def _classify_type(text: str) -> str:
     t = text.lower()
     if re.search(r"\b(one )?free reset\b", t) or "free reset" in t:
         return "free_reset"
+    # An explicit reset verb wins over "increase" prose: "fully reset … increased
+    # usage drains" describes a bug while announcing a reset, and "double reset"
+    # is adjectival on the reset itself. Without this, the increase regex steals
+    # the classification (regression: @thsottiaux Jun 18 & Jun 29 2026).
+    if RESET_CORE.search(text):
+        return "goodwill_reset"
     if re.search(r"\b(doubl|increas|rais|bump|higher|more generous)", t):
         return "limit_increase"
     if re.search(r"\b(credit|compensat|refund)", t):
