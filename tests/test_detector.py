@@ -90,6 +90,27 @@ def test_official_bare_reset_without_limit_noun_is_detected():
     events = detect(posts, account_platform=ACCOUNTS, now=NOW + timedelta(days=2))
     assert len(events) == 2
     assert all(e.platform == "codex" for e in events)
+    # "double reset" is a reset, not a limit increase - the "doubl" verb is
+    # adjectival on the reset itself.
+    assert all(e.type == "goodwill_reset" for e in events)
+
+
+def test_reset_dominates_over_increase_prose():
+    # "Fully reset" alongside "increased usage drains" (a bug description) must
+    # classify as a reset, not as a limit increase (regression: @thsottiaux Jun 29 2026).
+    post = CandidatePost(
+        source="nitter",
+        url="https://x.com/thsottiaux/status/2071740419030053227",
+        text="Codex usage limits will be fully reset again in the next hour and we "
+        "will credit one additional reset into your bank for your own usage over the "
+        "next 24 hours. We investigated reports that Codex usage was being consumed "
+        "faster than expected, with increased usage drains for some users.",
+        account="thsottiaux",
+        posted_at=datetime(2026, 6, 29, 23, 39, tzinfo=timezone.utc),
+    )
+    events = detect([post], account_platform=ACCOUNTS, now=NOW + timedelta(days=10))
+    assert len(events) == 1
+    assert events[0].type == "goodwill_reset"
 
 
 def test_feature_chatter_question_is_not_a_reset():
