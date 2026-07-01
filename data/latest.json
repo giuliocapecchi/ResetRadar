@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-07-01T19:50:50.124831+00:00",
+  "generated_at": "2026-07-01T21:25:52.674107+00:00",
   "platforms": {
     "claude": {
-      "id": "claude:credit:2026-07-01T19:31:07+00:00",
+      "id": "claude:goodwill_reset:2026-07-01T21:16:35+00:00",
       "platform": "claude",
-      "type": "credit",
-      "title": "Claude: Usage credits granted",
-      "detail": "R to @claudeai: All paid plans with usage included can access Fable 5 through July 7. You can use Fable 5 up to 50% of your weekly usage limit, after which you can switch to another model for the remainder of your usage. You can also con\u2026",
-      "first_seen": "2026-07-01T19:31:07+00:00",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Now that Fable 5 is ready to build (again), we've reset everyone's 5-hour and weekly rate limits.",
+      "first_seen": "2026-07-01T21:16:35+00:00",
       "source_urls": [
-        "https://x.com/claudeai/status/2072402639644766602"
+        "https://x.com/claudedevs/status/2072429181565288665"
       ],
-      "account": "claudeai"
+      "effective_at": "2026-07-01T21:16:35+00:00",
+      "account": "claudedevs"
     },
     "codex": {
       "id": "codex:goodwill_reset:2026-06-29T23:39:41+00:00",
@@ -28,6 +29,19 @@
     }
   },
   "recent": [
+    {
+      "id": "claude:goodwill_reset:2026-07-01T21:16:35+00:00",
+      "platform": "claude",
+      "type": "goodwill_reset",
+      "title": "Claude: Usage limits reset for everyone",
+      "detail": "Now that Fable 5 is ready to build (again), we've reset everyone's 5-hour and weekly rate limits.",
+      "first_seen": "2026-07-01T21:16:35+00:00",
+      "source_urls": [
+        "https://x.com/claudedevs/status/2072429181565288665"
+      ],
+      "effective_at": "2026-07-01T21:16:35+00:00",
+      "account": "claudedevs"
+    },
     {
       "id": "claude:credit:2026-07-01T19:31:07+00:00",
       "platform": "claude",
@@ -331,18 +345,6 @@
       ],
       "effective_at": "2026-04-21T15:00:28+00:00",
       "account": "sama"
-    },
-    {
-      "id": "codex:goodwill_reset:2026-04-17T00:58:21+00:00",
-      "platform": "codex",
-      "type": "goodwill_reset",
-      "title": "Codex: Usage limits reset for everyone",
-      "detail": "Hi! To celebrate its 1-year anniversary, I have allowed Codex to reset its own rate limits across all plans. Enjoy all the new features.",
-      "first_seen": "2026-04-17T00:58:21+00:00",
-      "source_urls": [
-        "https://x.com/thsottiaux/status/2044943514832871564"
-      ],
-      "account": "thsottiaux"
     }
   ]
 }

@@ -1,5 +1,18 @@
 [
   {
+    "id": "claude:goodwill_reset:2026-07-01T21:16:35+00:00",
+    "platform": "claude",
+    "type": "goodwill_reset",
+    "title": "Claude: Usage limits reset for everyone",
+    "detail": "Now that Fable 5 is ready to build (again), we've reset everyone's 5-hour and weekly rate limits.",
+    "first_seen": "2026-07-01T21:16:35+00:00",
+    "source_urls": [
+      "https://x.com/claudedevs/status/2072429181565288665"
+    ],
+    "effective_at": "2026-07-01T21:16:35+00:00",
+    "account": "claudedevs"
+  },
+  {
     "id": "claude:credit:2026-07-01T19:31:07+00:00",
     "platform": "claude",
     "type": "credit",
