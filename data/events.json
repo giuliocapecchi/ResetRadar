@@ -1,5 +1,17 @@
 [
   {
+    "id": "claude:credit:2026-07-01T19:31:07+00:00",
+    "platform": "claude",
+    "type": "credit",
+    "title": "Claude: Usage credits granted",
+    "detail": "R to @claudeai: All paid plans with usage included can access Fable 5 through July 7. You can use Fable 5 up to 50% of your weekly usage limit, after which you can switch to another model for the remainder of your usage. You can also con\u2026",
+    "first_seen": "2026-07-01T19:31:07+00:00",
+    "source_urls": [
+      "https://x.com/claudeai/status/2072402639644766602"
+    ],
+    "account": "claudeai"
+  },
+  {
     "id": "codex:goodwill_reset:2026-06-29T23:39:41+00:00",
     "platform": "codex",
     "type": "goodwill_reset",
