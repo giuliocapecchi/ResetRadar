@@ -7,10 +7,24 @@
     "detail": "Now that Fable 5 is ready to build (again), we've reset everyone's 5-hour and weekly rate limits.",
     "first_seen": "2026-07-01T21:16:35+00:00",
     "source_urls": [
-      "https://x.com/claudedevs/status/2072429181565288665"
+      "https://x.com/claudedevs/status/2072429181565288665",
+      "https://x.com/trq212/status/2072429181565288665"
     ],
     "effective_at": "2026-07-01T21:16:35+00:00",
     "account": "claudedevs"
+  },
+  {
+    "id": "codex:goodwill_reset:2026-07-01T20:50:48+00:00",
+    "platform": "codex",
+    "type": "goodwill_reset",
+    "title": "Codex: Usage limits reset for everyone",
+    "detail": "RT by @OpenAIDevs: \ud83d\uddb2\ufe0f We love our community! To celebrate getting together with many of you we brought @thsottiaux's reset button to AIE World's Fair. Congrats Melanie for pushing the button \ud83c\udf89 All Codex Go/Plus/Pro subscribers around the\u2026",
+    "first_seen": "2026-07-01T20:50:48+00:00",
+    "source_urls": [
+      "https://x.com/openaidevs/status/2072422693081940445",
+      "https://x.com/gdb/status/2072443674307535239"
+    ],
+    "account": "openaidevs"
   },
   {
     "id": "claude:credit:2026-07-01T19:31:07+00:00",

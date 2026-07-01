@@ -5,7 +5,7 @@
     <link>https://giuliocapecchi.github.io/ResetRadar/</link>
     <atom:link href="https://giuliocapecchi.github.io/ResetRadar/feed.xml" rel="self" type="application/rss+xml" />
     <description>Global Claude Code &amp; Codex usage-limit resets.</description>
-    <lastBuildDate>Wed, 01 Jul 2026 21:25:52 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 23:12:44 +0000</lastBuildDate>
     <item>
       <title>Claude: Usage limits reset for everyone</title>
       <link>https://x.com/claudedevs/status/2072429181565288665</link>
@@ -13,6 +13,14 @@
       <category>claude</category>
       <pubDate>Wed, 01 Jul 2026 21:16:35 +0000</pubDate>
       <description>Now that Fable 5 is ready to build (again), we've reset everyone's 5-hour and weekly rate limits.</description>
+    </item>
+    <item>
+      <title>Codex: Usage limits reset for everyone</title>
+      <link>https://x.com/openaidevs/status/2072422693081940445</link>
+      <guid isPermaLink="false">codex:goodwill_reset:2026-07-01T20:50:48+00:00</guid>
+      <category>codex</category>
+      <pubDate>Wed, 01 Jul 2026 20:50:48 +0000</pubDate>
+      <description>RT by @OpenAIDevs: 🖲️ We love our community! To celebrate getting together with many of you we brought @thsottiaux's reset button to AIE World's Fair. Congrats Melanie for pushing the button 🎉 All Codex Go/Plus/Pro subscribers around the…</description>
     </item>
     <item>
       <title>Claude: Usage credits granted</title>
