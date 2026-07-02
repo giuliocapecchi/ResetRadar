@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T23:12:44.433688+00:00",
+  "generated_at": "2026-07-02T07:28:59.995379+00:00",
   "platforms": {
     "claude": {
       "id": "claude:goodwill_reset:2026-07-01T21:16:35+00:00",
@@ -10,7 +10,8 @@
       "first_seen": "2026-07-01T21:16:35+00:00",
       "source_urls": [
         "https://x.com/claudedevs/status/2072429181565288665",
-        "https://x.com/trq212/status/2072429181565288665"
+        "https://x.com/trq212/status/2072429181565288665",
+        "https://x.com/bcherny/status/2072429181565288665"
       ],
       "effective_at": "2026-07-01T21:16:35+00:00",
       "account": "claudedevs"
@@ -39,7 +40,8 @@
       "first_seen": "2026-07-01T21:16:35+00:00",
       "source_urls": [
         "https://x.com/claudedevs/status/2072429181565288665",
-        "https://x.com/trq212/status/2072429181565288665"
+        "https://x.com/trq212/status/2072429181565288665",
+        "https://x.com/bcherny/status/2072429181565288665"
       ],
       "effective_at": "2026-07-01T21:16:35+00:00",
       "account": "claudedevs"
